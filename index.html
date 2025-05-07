@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Balkumari Brews</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to bottom right, #fffaf0, #ffebcd);
+      color: #4b2e2e;
+      text-align: center;
+    }
+
+    .hero {
+      padding: 60px 20px 40px;
+    }
+
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 1.2rem;
+      max-width: 600px;
+      margin: 0 auto 20px;
+    }
+
+    .btn {
+      display: inline-block;
+      background-color: #a0522d;
+      color: white;
+      padding: 12px 24px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 1rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      transition: background-color 0.3s ease;
+    }
+
+    .btn:hover {
+      background-color: #7b3f1d;
+    }
+
+    .video-section video {
+      width: 90%;
+      max-width: 700px;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+      margin: 40px 0;
+    }
+
+    .visit-info {
+      padding: 40px 20px;
+    }
+
+    .visit-info h2 {
+      font-size: 2rem;
+      margin-bottom: 10px;
+    }
+
+    /* Animation */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 1s ease;
+    }
+
+    .fade-in.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .delay {
+      transition-delay: 0.3s;
+    }
+
+    .delay2 {
+      transition-delay: 0.6s;
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <h1 class="fade-in">Welcome to Balkumari Brews ☕</h1>
+    <p class="fade-in delay">In the heart of Balkumari, Lalitpur — where coffee meets community.</p>
+    <a href="#visit" class="btn fade-in delay2">Visit Us Today</a>
+  </header>
+
+  <section class="video-section fade-in">
+    <video autoplay muted loop>
+      <source src="https://cdn.pixabay.com/vimeo/419841107/coffee-34252.mp4?width=640&hash=3f94e979e9c43017a46a40a24461b07ab5e0e465" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </section>
+
+  <section id="visit" class="visit-info fade-in">
+    <h2>Find Us at Balkumari, Lalitpur</h2>
+    <p>Open every day from 7 AM to 8 PM. Come enjoy a fresh cup of joy!</p>
+  </section>
+
+  <script>
+    // Reveal elements on scroll
+    const fadeElements = document.querySelectorAll('.fade-in');
+
+    const revealOnScroll = () => {
+      fadeElements.forEach(el => {
+        const top = el.getBoundingClientRect().top;
+        const windowHeight = window.innerHeight;
+        if (top < windowHeight - 100) {
+          el.classList.add('show');
+        }
+      });
+    };
+
+    window.addEventListener('scroll', revealOnScroll);
+    window.addEventListener('load', revealOnScroll);
+  </script>
+</body>
+</html>
